@@ -19,6 +19,14 @@ project "ImGui"
         "imgui_demo.cpp"
     }
 
+
+    filter { "action:xcode*" }
+        XCodeBuildSettings =
+        {
+        }
+        merge(XCodeBuildSettings, OS.XCodeBuildSettings)
+        xcodebuildsettings (XCodeBuildSettings)
+
     filter "system:windows"
         systemversion "latest"
         cppdialect "C++17"
